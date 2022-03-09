@@ -1,0 +1,46 @@
+.error {
+    color:red;
+}
+
+.app {
+    width: 200px; height: 100px; /* Размеры */
+
+    border: 1px solid #fff; /* Белая рамка */
+    border-radius: 5px; /* Радиус скругления */
+    display: inline-block;
+}
+
+.display {
+    width: 180px; height: 50px; /* Размеры */
+    background: #2fc4d7; /* Цвет фона */
+    border: 1px solid #fff; /* Белая рамка */
+    border-radius: 5px; /* Радиус скругления */
+    display: inline-block;
+}
+
+.button {
+    width: 180px; height: 40px; /* Размеры */
+    border: 1px solid #fff; /* Белая рамка */
+    border-radius: 5px; /* Радиус скругления */
+    display: inline-block;
+}
+
+
+
+.buttonClass {
+    margin: 10px;
+    border-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+.buttonClass:hover {
+    box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.buttonClass:disabled:hover{
+    border-color: #f7f8fa;
+    background-color: #e10a0a;
+}

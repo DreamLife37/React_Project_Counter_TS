@@ -6,15 +6,16 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 
 type UniversalButtonType = DefaultButtonPropsType & {
     callback: () => void
-    count: number
+    count: number | null
     name: string
     condition?: boolean
 }
 
 //export const UniversalButton = (props: UniversalButtonType) => {
-    export const UniversalButton: React.FC<UniversalButtonType> = (
-        {callback,count,name,condition, ...restProps
-        })=>{
+export const UniversalButton: React.FC<UniversalButtonType> = (
+    {
+        callback, count, name, condition, ...restProps
+    }) => {
 
 
     return (<span>

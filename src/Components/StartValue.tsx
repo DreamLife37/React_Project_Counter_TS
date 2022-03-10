@@ -1,10 +1,10 @@
 import {ChangeEvent, useState} from "react";
 
-type MaxValuePropsType = {
-     set: (value:string)=>void
+type StartValuePropsType = {
+    set: (value:string)=>void
 }
 
-export const MaxValue = (props: MaxValuePropsType) => {
+export const StartValue = (props: StartValuePropsType) => {
     //let [maxValues, setMaxValues] = useState<ChangeEvent<HTMLInputElement> | number | string>(props.MAXVALUE)
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         //console.log(e.currentTarget.value)
@@ -16,5 +16,5 @@ export const MaxValue = (props: MaxValuePropsType) => {
         props.set(e.currentTarget.value)
       //  console.log(maxValues)
     }
-    return <span>Max Value:<input onChange={onChangeHandler} type="text"/></span>
+    return <span>Start Value:<input onChange={onChangeHandler} type="text"/></span>
 }

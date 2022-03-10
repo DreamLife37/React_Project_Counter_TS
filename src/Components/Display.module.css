@@ -1,30 +1,46 @@
 .error {
-    color:red;
+    color: #e10a0a;
+    font-weight: bold;
 }
 
 .app {
-    width: 200px; height: 100px; /* Размеры */
-
+    width: 200px;
+    height: 200px; /* Размеры */
     border: 1px solid #fff; /* Белая рамка */
     border-radius: 5px; /* Радиус скругления */
     display: inline-block;
 }
 
 .display {
-    width: 180px; height: 50px; /* Размеры */
+    width: 180px;
+    height: 70px; /* Размеры */
     background: #2fc4d7; /* Цвет фона */
     border: 1px solid #fff; /* Белая рамка */
     border-radius: 5px; /* Радиус скругления */
     display: inline-block;
+    margin: 10px;
+
 }
 
-.button {
-    width: 180px; height: 40px; /* Размеры */
-    border: 1px solid #fff; /* Белая рамка */
-    border-radius: 5px; /* Радиус скругления */
+.inputClass {
+    width: 180px;
+    height: 100px; /* Размеры */
     display: inline-block;
 }
 
+.errorInputClass {
+    border: 3px solid #e10a0a;
+    color: #e10a0a;
+}
+
+.button {
+    width: 180px;
+    height: 40px; /* Размеры */
+    border: 1px solid #fff; /* Белая рамка */
+    border-radius: 5px; /* Радиус скругления */
+    display: inline-block;
+    margin: 10px;
+}
 
 
 .buttonClass {
@@ -40,7 +56,7 @@
     box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
 
-.buttonClass:disabled:hover{
+.buttonClass:disabled:hover {
     border-color: #f7f8fa;
     background-color: #e10a0a;
 }

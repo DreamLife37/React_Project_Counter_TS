@@ -1,22 +1,14 @@
-import React, {useState} from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Display} from "./Components/Display";
-import {Button} from "./Components/Button";
 import {UniversalButton} from "./Components/UniversalButton";
 import s from './Components/Display.module.css'
-import {MaxValue} from "./Components/MaxValue";
-import {StartValue} from "./Components/StartValue";
 import {UniversalInput} from './Components/UniversalInput';
 
 function App() {
-
-    //задание констант
-
-
-    let [startValues, setStartValues] = useState<any>(0)
-    let [maxValues, setMaxValues] = useState<any>(0)
-    const [count, setCount] = useState<number | null>(null)
+    const [startValues, setStartValues] = useState<any>(0)
+    const [maxValues, setMaxValues] = useState<any>(5)
+    const [count, setCount] = useState<number | null>(0)
     let [error, setError] = useState('')
 
     //Создание callback должно быть на уровне бизнес логики:
@@ -36,43 +28,59 @@ function App() {
         console.log("appStartValues" + value)
         console.log('start БЫЛО' + startValues)
         setStartValues((Number(value)))
-        debugger
         if (startValues > value || startValues < 0) {
             error = 'Incorrect value'
             setError(error)
-        } else setError('')
-        console.log(error)
+        } else setError('enter values and press SET')
     }
-
 
     const setMaxValue = (value: string) => {
         console.log("appMaxValues" + value)
         console.log('max БЫЛО' + maxValues)
         setMaxValues((Number(value)))
-        console.log(maxValues)
-        debugger
         if (startValues > value || startValues < 0) {
             error = 'Incorrect value'
             setError(error)
-        } else setError('')
+        } else setError('enter values and press SET')
     }
 
-    //setError('enter values and press SET')
+    useEffect(() => {
+        let localValue = localStorage.getItem('startValues')
+        if (localValue) {
+            setStartValues(Number(localValue))
+        }
+    }, [])
 
+    useEffect(() => {
+        let localValue = localStorage.getItem('maxValues')
+        if (localValue) {
+            setMaxValues(Number(localValue))
+        }
+    }, [])
+
+    useEffect(() => {
+            localStorage.setItem('startValues', startValues)
+        }, [startValues]
+    )
+
+    useEffect(() => {
+            localStorage.setItem('maxValues', maxValues)
+        }, [maxValues]
+    )
 
     const setValue = () => {
         setCount(startValues)
+        setError('')
     }
-
 
     return (
         <div className="App">
             <header className="App-header">
                 <div className={s.app}>
-
                     <div className={s.inputClass}>
-                        <UniversalInput name={'Start Value:'} callback={setStartValue} error={error}/>
-                        <UniversalInput name={'Max Value:'} callback={setMaxValue} error={error}/>
+                        <UniversalInput name={'Start Value:'} callback={setStartValue} error={error}
+                                        value={startValues}/>
+                        <UniversalInput name={'Max Value:'} callback={setMaxValue} error={error} value={maxValues}/>
                     </div>
 
                     <div className={s.button}>

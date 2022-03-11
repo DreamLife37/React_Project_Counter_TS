@@ -17,7 +17,6 @@ export const UniversalButton: React.FC<UniversalButtonType> = (
         callback, count, name, condition, ...restProps
     }) => {
 
-
     return (<span>
             <button disabled={condition}
                     onClick={callback} className={s.buttonClass}>{name}</button>

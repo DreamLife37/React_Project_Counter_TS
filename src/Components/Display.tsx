@@ -8,7 +8,7 @@ type DisplayPropsType = {
 export const Display = (props: DisplayPropsType) => {
 
     return <div
-        className={props.count == props.maxValue ? s.error : '' ||
+        className={!props.error && props.count == props.maxValue  ? s.error : '' ||
         props.error == 'Incorrect value' ? s.error : ''}>
         {props.error ? props.error : props.count}
     </div>

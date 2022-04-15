@@ -24,7 +24,7 @@ function App() {
         }
     }
 
-    const setStartValue = (value: string) => {
+    const setStartValue = (value: number) => {
         console.log("appStartValues" + value)
         console.log('start БЫЛО' + startValues)
         setStartValues((Number(value)))
@@ -34,7 +34,7 @@ function App() {
         } else setError('enter values and press SET')
     }
 
-    const setMaxValue = (value: string) => {
+    const setMaxValue = (value: number) => {
         console.log("appMaxValues" + value)
         console.log('max БЫЛО' + maxValues)
         setMaxValues((Number(value)))

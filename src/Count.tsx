@@ -1,4 +1,4 @@
-import React, {useEffect, useReducer, useState} from 'react';
+import React from 'react';
 import './App.css';
 import {Display} from "./Components/Display";
 import {UniversalButton} from "./Components/UniversalButton";
@@ -14,7 +14,7 @@ import {
 import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "./bll/store";
 
-function AppWithRedux() {
+export const Count = () => {
 
     const value = useSelector<AppStateType, number>(state => state.counter.value)
     const startValue = useSelector<AppStateType, number>(state => state.counter.startValue)
@@ -39,13 +39,11 @@ function AppWithRedux() {
         dispatch(setStartValueAC(value))
     }
     const onClickSetMaxValueHandler = (value: number) => {
-        if (value <= startValue || value < 0) {
+        if (value <= startValue) {
             dispatch(displayMessageAC('Incorrect value'))
-        } else {
+        } else
             dispatch(displayMessageAC('enter values and press SET'))
-            dispatch(setMaxValueAC(value))
-        }
-
+        dispatch(setMaxValueAC(value))
     }
 
     const onClickSetValuesHandler = () => {
@@ -87,4 +85,4 @@ function AppWithRedux() {
     );
 }
 
-export default AppWithRedux;
+

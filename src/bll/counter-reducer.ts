@@ -7,7 +7,6 @@ export const initialState = {
 
 type InitialStateType = typeof initialState
 
-
 export const counterReducer = (state: InitialStateType = initialState, action: counterReducerType): InitialStateType => {
 
     switch (action.type) {
@@ -34,13 +33,11 @@ export const counterReducer = (state: InitialStateType = initialState, action: c
         case "SET-VALUES": {
             return {...state, value: state.startValue, error: ''}
         }
-
         case "DISPLAY-MESSAGE": {
             let newState = {...state}
             newState.error = action.error
             return newState
         }
-
         default:
             return state
     }

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DreamLife37/React_Project_Counter_TS/static/css/main.feee8b4c.css",
+    "main.js": "/DreamLife37/React_Project_Counter_TS/static/js/main.c5afef97.js",
+    "static/js/787.fe5040cf.chunk.js": "/DreamLife37/React_Project_Counter_TS/static/js/787.fe5040cf.chunk.js",
+    "index.html": "/DreamLife37/React_Project_Counter_TS/index.html",
+    "main.feee8b4c.css.map": "/DreamLife37/React_Project_Counter_TS/static/css/main.feee8b4c.css.map",
+    "main.c5afef97.js.map": "/DreamLife37/React_Project_Counter_TS/static/js/main.c5afef97.js.map",
+    "787.fe5040cf.chunk.js.map": "/DreamLife37/React_Project_Counter_TS/static/js/787.fe5040cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.feee8b4c.css",
+    "static/js/main.c5afef97.js"
+  ]
+}
